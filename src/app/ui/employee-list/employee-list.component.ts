@@ -13,5 +13,8 @@ import { EmployeeModel } from '../../model/employee.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeListComponent {
-  data$: Observable<EmployeeModel[] | null> = of(null);
+  constructor(private _client: HttpClient){}
+  data$: Observable<Employee[] | null> = this._client.get<Employee[]>( url: );
+
+
 }
